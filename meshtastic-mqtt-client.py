@@ -1,31 +1,16 @@
 #!/bin/python 
-# Las dependencias:
-from ast import Not
-#from types import NoneType
+
+from meshtastic import mesh_pb2, portnums_pb2, mqtt_pb2
 import yaml
-#import json for future version
 import time
 import os
 import sys
 import argparse
 import paho.mqtt.client as mqtt
 import logging
-#import logging.handlers as handlers
 import PySimpleGUI as sg
 import sqlite3 as sl
-#import sqlalchemy for future version
 import random
-#from queue import Queue
-#from logging import NullHandler
-
-#PROTOBUF dependencies copied from joshpirihi/meshtastic-mqtt
-import portnums_pb2 as portnums_pb2
-from portnums_pb2 import TELEMETRY_APP, POSITION_APP
-import mesh_pb2 as mesh_pb2
-import mqtt_pb2 as mqtt_pb2
-import telemetry_pb2 as telemetry_pb2
-#from google.protobuf.json_format import MessageToJson
-
 
 # First we define the GUI
 def generate_main_window(menu_def):
