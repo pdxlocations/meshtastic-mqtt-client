@@ -20,10 +20,10 @@ import random
 
 #PROTOBUF dependencies copied from joshpirihi/meshtastic-mqtt
 import portnums_pb2 as portnums_pb2
-from portnums_pb2 import ENVIRONMENTAL_MEASUREMENT_APP, POSITION_APP
+from portnums_pb2 import TELEMETRY_APP, POSITION_APP
 import mesh_pb2 as mesh_pb2
 import mqtt_pb2 as mqtt_pb2
-import environmental_measurement_pb2 as environmental_measurement_pb2
+import telemetry_pb2 as telemetry_pb2
 #from google.protobuf.json_format import MessageToJson
 
 
