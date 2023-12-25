@@ -200,8 +200,8 @@ def encode_message(encoded_message,mesh_channel_id,mesh_gateway_id,mesh_client_i
         packet = mesh_pb2.MeshPacket()
         setattr(packet,"from",int(mesh_client_id))
         #setattr(packet,"to",random.getrandbits(32))
-        setattr(packet, "to",4294967295)
-        setattr(packet,"id",random.getrandbits(32))
+        packet.to = 4294967295
+        packet.id = random.getrandbits(32)
         setattr(packet,"rx_time",1658889528)
         setattr(packet,"hop_limit",3)
         packet.decoded.CopyFrom(encoded_message)
@@ -439,7 +439,7 @@ def get_meshtastic_config(config):
 def gateway_subscribe(client, mqtt_ip, common_ports_dict, extra_ports_dict, mesh_channel_id, mesh_gateway_id):
     try:
         #for port in common_ports_list:
-        mesh_mqtt_topic = "msh/1/c/" + str(mesh_channel_id) + "/#"  #+ "/"  + str(mesh_gateway_id) + "/" + port[0]
+        mesh_mqtt_topic = "msh/2/c/" + str(mesh_channel_id) + "/#"  #+ "/"  + str(mesh_gateway_id) + "/" + port[0]
         client.subscribe(mesh_mqtt_topic)
         logging.info(f"You are now subscribed to {mesh_mqtt_topic}.")
     except Exception as exception:
